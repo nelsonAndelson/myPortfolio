@@ -2,12 +2,26 @@
   box-sizing: border-box; }
 
 body {
+  overflow: hidden;
   background: #444;
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
+  body#bg-img {
+    background: url("../img/code.jpg");
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(68, 68, 68, 0.8);
+      z-index: -2; }
 
 h1,
 h2,
@@ -23,11 +37,14 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 2rem;
-    background: rbga(#494949, 0.8); }
+    background: rgba(75, 75, 75, 0.5); }
 
 a {
   color: #fff;
   text-decoration: none; }
+  a:hover {
+    color: #eec31a;
+    transition: all 0.5s ease-out; }
 
 header {
   position: fixed;
@@ -44,4 +61,9 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eec31a; }
+        color: #eec31a;
+        transition: all 0.5s ease-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
