@@ -40,10 +40,6 @@ a {
     color: #fff;
     text-decoration: none;
 
-    &:hover {
-        color: $secondary-color;
-        @include easeOut();
-    }
 }
 
 header {
