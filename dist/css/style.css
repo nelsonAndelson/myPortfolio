@@ -40,7 +40,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: #3a4857;
     list-style: none;
     font-size: 1.5rem;
     transform: translate3d(0, -100%, 0);
@@ -48,7 +48,7 @@
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #444;
+    background: #456;
     transition: all 0.5s ease-out;
     transform: translate3d(0, 100%, 0); }
     .menu-branding.show {
@@ -56,11 +56,11 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.png");
+      background: url("../img/portrait-Recovered.jpg");
       background-size: cover;
       opacity: 1;
       border-radius: 50%;
-      border: 3px solid #eec31a; }
+      border: 3px solid #333; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
@@ -72,14 +72,14 @@
       font-size: 30px;
       text-transform: uppercase;
       padding: 1rem 0;
-      font-weight: 300;
+      font-weight: 400;
       color: #fff;
       text-decoration: none;
       transition: all 0.5s ease-out; }
       .menu .nav-item .nav-link:hover {
-        color: #eec31a; }
+        color: #333; }
     .menu .nav-item.current > a {
-      color: #eec31a; }
+      color: #333; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -93,12 +93,48 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  div.menu-branding,
+  nav.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    div.menu-branding.show,
+    nav.menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    line-height: 1;
+    width: 100%; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait-Sm.jpg");
+      background-size: cover;
+      width: 150px;
+      height: 150px;
+      margin: 5px; }
+  .menu-nav .nav-item .nav-link {
+    font-size: 22px; } }
+
+@media screen and (max-width: 576px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
 * {
   box-sizing: border-box; }
 
 body {
   overflow: hidden;
-  background: #444;
+  background: #456;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -115,7 +151,7 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      background: rgba(68, 68, 68, 0.8);
+      background: rgba(68, 85, 102, 0.8);
       z-index: -2; }
 
 h1,
@@ -133,7 +169,7 @@ h3 {
     font-size: 20px;
     margin-bottom: 1rem;
     padding: 0.2rem 2rem;
-    background: rgba(75, 75, 75, 0.5); }
+    background: rgba(74, 92, 111, 0.5); }
 
 a {
   color: #fff;
@@ -145,7 +181,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eec31a; }
+  color: #333; }
 
 main {
   padding: 4rem; }
@@ -155,7 +191,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eec31a;
+        color: #333;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
