@@ -1,16 +1,14 @@
-@import 'config';
-@import '_menu';
-@import '_mobile';
+@import "config";
+@import "_menu";
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    overflow: hidden;
     @include background;
     background: $primary-color;
-    color: #fff;
+    color: setTextColor($primary-color);
     height: 100%;
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,19 +26,25 @@ h3 {
         font-size: 5rem;
     }
 
+    &.my-title {
+        font-weight: 200;
+        font-size: 1.5rem;
+        color: $secondary-color;
+        padding: 0.2rem 2rem;
+    }
+
     &.sm-heading {
         font-size: 20px;
         margin-bottom: 1rem;
         padding: 0.2rem 2rem;
         // To see through the lighten background, need to add opacity
-        background: rgba(lighten($primary-color, 2.8), 0.5)
+        background: rgba(lighten($primary-color, 2.8), 0.5);
     }
 }
 
 a {
-    color: #fff;
+    color: setTextColor($primary-color);
     text-decoration: none;
-
 }
 
 header {
@@ -53,9 +57,9 @@ header {
     color: $secondary-color;
 }
 
-
 main {
     padding: 4rem;
+    min-height: calc(100vh - 60px);
 
     .icons {
         margin-top: 1rem;
@@ -79,3 +83,201 @@ main {
         }
     }
 }
+
+//About Page
+//Grid System
+.about-info {
+    @include easeOut;
+    display: grid;
+    grid-template-areas:
+        "bioimage bio bio"
+        'sectionname sectionname sectionname'
+        "job1 job2 job3"
+        'sectionname2 sectionname2 sectionname2'
+        'skill skill skill';
+
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+
+    .about-portrait {
+        background: url("../img/portrait-Recovered.jpg");
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+    }
+
+    //Define the grid areas
+    .about-portrait {
+        grid-area: bioimage;
+        border: 3px $secondary-color solid;
+        border-radius: 50%;
+        margin: auto;
+    }
+
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+
+    .section-name {
+        grid-area: sectionname;
+    }
+
+    .job {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+
+        h6 {
+            margin-top: 15px;
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+
+    .job1 {
+        grid-area: job1;
+    }
+
+    .job2 {
+        grid-area: job2;
+    }
+
+    .job3 {
+        grid-area: job3;
+    }
+
+    .skill {
+        grid-area: skill;
+    }
+
+
+}
+
+//Progress bars
+
+.progress {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: lighten($secondary-color, 55);
+}
+
+.progress-bar {
+    display: absolute;
+    height: 10px;
+    background: $secondary-color;
+    border-radius: 4px 0 0 4px;
+}
+
+.progress-html {
+    @extend .progress-bar;
+    width: 100%;
+}
+
+.progress-css {
+    @extend .progress-bar;
+    width: 100%;
+}
+
+.progress-js {
+    @extend .progress-bar;
+    width: 66%;
+}
+
+.progress-react {
+    @extend .progress-bar;
+    width: 8%;
+}
+
+.progress-nodejs {
+    @extend .progress-bar;
+    width: 10%;
+}
+
+// Work page scss
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.7rem;
+    text-align: left;
+
+    .item {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+
+            border: 2px solid #fff;
+
+            &:hover {
+                opacity: 0.5;
+                border-color: $secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+}
+
+// Button classes
+.btn {
+    display: block;
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+        background: $secondary-color;
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #000;
+}
+
+//Contact styles
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+    align-items: center;
+
+    div {
+        font-size: 2rem;
+        padding: 1.5rem 2.5rem;
+        border: 3px solid #fff;
+        @include easeOut;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+            padding: 0.5rem 1.5rem;
+            background: $secondary-color;
+            color: setTextColor($secondary-color);
+
+            span {
+                color: setTextColor($secondary-color);
+            }
+        }
+    }
+}
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: darken($primary-color, 10);
+    color: setTextColor($primary-color);
+    height: 60px;
+}
+
+@import "_mobile";

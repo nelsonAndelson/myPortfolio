@@ -1,5 +1,5 @@
-$primary-color: #456;
-$secondary-color: #333;
+$primary-color: rgb(224, 248, 250);
+$secondary-color: #047794;
 $show-home-img: true;
 $home-img: url('../img/code.jpg');
 $background-opacity: 0.8;
@@ -27,6 +27,17 @@ $background-opacity: 0.8;
 
 @mixin easeOut {
     transition: all 0.5s ease-out;
+}
+
+//Set text color
+@function setTextColor($color) {
+    @if(lightness($color) > 40) {
+        @return #333;
+    }
+
+    @else {
+        @return #fff;
+    }
 }
 
 // Media query mixin
