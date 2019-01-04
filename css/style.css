@@ -40,7 +40,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #caf3f6;
+    background: #d5d5d5;
     list-style: none;
     font-size: 1.5rem;
     transform: translate3d(0, -100%, 0);
@@ -48,7 +48,7 @@
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #e0f8fa;
+    background: #e2e2e2;
     transition: all 0.5s ease-out;
     transform: translate3d(0, 100%, 0); }
     .menu-branding.show {
@@ -97,7 +97,7 @@
   box-sizing: border-box; }
 
 body {
-  background: #e0f8fa;
+  background: #e2e2e2;
   color: #333;
   height: 100%;
   margin: 0;
@@ -114,7 +114,7 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      background: rgba(224, 248, 250, 0.8);
+      background: rgba(226, 226, 226, 0.8);
       z-index: -2; }
 
 h1,
@@ -139,7 +139,7 @@ h3 {
     font-size: 20px;
     margin-bottom: 1rem;
     padding: 0.2rem 2rem;
-    background: rgba(236, 251, 252, 0.5); }
+    background: rgba(233, 233, 233, 0.5); }
 
 a {
   color: #333;
@@ -172,11 +172,7 @@ main {
 .about-info {
   transition: all 0.5s ease-out;
   display: grid;
-  grid-template-areas: "bioimage bio bio"
- 'sectionname sectionname sectionname'
- "job1 job2 job3"
- 'sectionname2 sectionname2 sectionname2'
- 'skill skill skill';
+  grid-template-areas: "bioimage bio bio" 'sectionname sectionname sectionname' "job1 job2 job3" 'sectionname2 sectionname2 sectionname2' 'skill skill skill';
   grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
   text-align: left; }
@@ -196,7 +192,7 @@ main {
   .about-info .section-name {
     grid-area: sectionname; }
   .about-info .job {
-    background: #f6fdfe;
+    background: #efefef;
     padding: 0.5rem;
     border-bottom: #047794 5px solid; }
     .about-info .job h6 {
@@ -263,7 +259,7 @@ main {
     background: #047794; }
 
 .btn-dark {
-  background: #1eb0bd;
+  background: #636363;
   color: #fff; }
 
 .btn-light {
@@ -293,7 +289,7 @@ main {
 #main-footer {
   text-align: center;
   padding: 1rem;
-  background: #b4eef3;
+  background: #c9c9c9;
   color: #333;
   height: 60px; }
 
@@ -340,15 +336,7 @@ main {
     transition: all 0.5s ease-out;
     font-size: 20px;
     grid-template-columns: 1fr;
-    grid-template-areas: 'bioimage'
- 'bio'
- 'bio'
- 'sectionname'
- 'job1'
- 'job2'
- 'job3'
- 'sectionname2'
- 'skill';
+    grid-template-areas: 'bioimage' 'bio' 'bio' 'sectionname' 'job1' 'job2' 'job3' 'sectionname2' 'skill';
     grid-template-columns: 1fr;
     line-height: 1.5; }
     .about-info .about-portrait {
@@ -362,4 +350,6 @@ main {
   main#home h1 {
     margin-top: 10vh; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .about-info .skill {
+    font-size: 1rem; } }
